@@ -481,4 +481,8 @@ class TestApplicantListByRole(ListView):
 
 class TestApplicantListByFamilyName(ListView):
     def get_queryset(self):
-        return Applicant.objects.filter(role__startswith='')
+        return Applicant.objects.filter(name__startswith=self.kwargs['fn'])
+
+class TestModelListByYearAfter(ListView):
+    def get_queryset(self):
+        return Model.objects.filter(date_buy__year__gt=self.kwargs['year'])

@@ -36,4 +36,5 @@ urlpatterns = [
     path('inventory/import/', InventoryImport.as_view(), name='inventory_import'),
     path('t/a/r/<int:rid>', TestApplicantListByRole.as_view()),
     re_path('t/a/fn/(?P<fn>.*)', TestApplicantListByFamilyName.as_view()), 
+    path('t/m/y/<int:year>', TestModelListByYearAfter.as_view()),
 ]
